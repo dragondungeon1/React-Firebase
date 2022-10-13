@@ -2,6 +2,7 @@ import  {auth} from '../utils/firebase'
 import {useAuthState} from "react-firebase-hooks/auth";
 import {useRouter} from "next/router";
 import {useEffect} from "react";
+import Link from 'next/link'
 
 export default function account() {
     const route = useRouter();
@@ -21,7 +22,9 @@ export default function account() {
         <div>
             <h1>Your posts</h1>
             <div>
-                posts
+                <Link href='/post'>
+                    posts
+                </Link>
             </div>
             <button onClick={() => auth.signOut()}>sign out</button>
         </div>
