@@ -16,16 +16,16 @@ export default function post() {
     const submitPost = async  (e) => {
         e.preventDefault();
 
-        //run checks
-        if (!post.description) {
-            toast.error('description is empty')
-
-            return;
-        }
+        //run checks a
         if (post.description.length > 300) {
             toast.error('description is too long!')
-
             return;
+        }
+        if (!post.description) {
+            toast.error('description is empty')
+            return;
+        }else {
+            toast.success('post successfull')
         }
         //make new post
         //ref to new collection
