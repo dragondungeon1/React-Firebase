@@ -3,10 +3,11 @@ import Message from "../components/message";
 import {useEffect, useState} from "react";
 import {db} from "../utils/firebase";
 import {collection, query, orderBy, onSnapshot} from "firebase/firestore";
+import Hero from "../components/hero";
+import Middle from "../components/home/middle";
 
 export default function Home() {
     //  create state with all posts
-
     const [allPosts, setAllPosts] = useState([]);
 
     const getPosts = async () => {
@@ -28,6 +29,9 @@ export default function Home() {
                 <title>Create Next App</title>
                 <meta name="description" content="Creatives minds"/>
             </Head>
+
+            <Hero/>
+            <Middle/>
 
             <div className="ny-12 text-lg font-medium mt-20">
                 <h2>See what people are saying</h2>
