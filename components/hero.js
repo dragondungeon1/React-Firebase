@@ -28,7 +28,7 @@ export default function Hero() {
                         <h1
                             className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl"
                         >
-                            <span className="block xl:inline"> {allPosts.map(post =>
+                            <span className="block xl:inline"> {allPosts.slice(0,1).map(post =>
                                 <Message key={post.id} {...post}>
 
                                 </Message>)}</span>

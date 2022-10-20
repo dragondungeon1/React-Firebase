@@ -12,20 +12,10 @@ function MyApp({Component, pageProps}) {
         }, 2000);
     }, []);
     return (
-        // <div>
-        //
-        // </div>
-        <div>{loading ?
-            <div className="flex items-center justify-center">
-                <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-                </div>
-            </div>
-            :
             <Layout>
                 <ToastContainer limit={1}/>
                 <Component {...pageProps} />
             </Layout>
-        }</div>
 
     );
 }

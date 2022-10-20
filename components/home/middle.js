@@ -34,7 +34,8 @@ export default function Index() {
                     </p>
 
                     <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-                        {allServices.map((service) => (
+                        {allServices.slice(0,4).map((service) => (
+
                             <div key={service.id} className="border-t border-gray-200 pt-4">
                                 <dt className="font-medium text-gray-900">{service.title}</dt>
                                 <dd className="mt-2 text-sm text-gray-500">{service.shortDescription}</dd>
