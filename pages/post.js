@@ -60,7 +60,7 @@ export default function post() {
         if (loading) return;
         if (!user) route.push("auth/login");
         if (routeData.id) {
-            setPost({description: routeData.description, id: routeData.id})
+            setPost({description: routeData.description, id: routeData.id, title: routeData.title})
         }
     };
 
@@ -75,6 +75,14 @@ export default function post() {
                 <h1 className="text-2xl font-bold">
                     {post.hasOwnProperty('id') ? 'Edit post' : 'Create a new post'}
                 </h1>
+                <div className="py-2">
+                    <h3 className="text-lg font-medium py-2">title</h3>
+                    <input value={post.title}
+                           onChange={(e) => setPost({...post, title: e.target.value})}
+                           className="bg-gray-800 h-12 w-full text-white rounded-lg p-2 text-small">
+                    </input>
+                    {/*<p className={`text-cyan-600 font-medium text-sm ${post.title.length > 100 ? 'text-red-600' : ''}`}>{post.title.length}/100</p>*/}
+                </div>
                 <div className="py-2">
                     <h3 className="text-lg font-medium py-2">Description</h3>
                     <textarea value={post.description}

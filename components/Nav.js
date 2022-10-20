@@ -23,9 +23,6 @@ export default function Nav() {
                 )}
                 {user && (
                     <div className="flex items-center gap-6">
-                        <Link href="/post">
-                            <button className="py-2 px-4 text-sm bg-cyan-500 text-white rounded-lg font-medium ml-8">Post</button>
-                        </Link>
                         <Dropdown/>
                     </div>
 
