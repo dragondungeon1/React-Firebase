@@ -19,7 +19,7 @@ export default function Hero() {
     }, []);
 
     return(
-        <div className="container items-center max-w-6xl px-8 mx-auto xl:px-5 mt-10">
+        <div className="container items-center lg:max-w-[85%] max-w-6xl px-8 mx-auto xl:px-5 mt-10">
             <div className="flex flex-wrap items-center sm:-mx-3">
                 <div className="w-full md:w-1/2 md:px-3">
                     <div
