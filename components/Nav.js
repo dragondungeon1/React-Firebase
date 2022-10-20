@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import {auth} from "../utils/firebase";
 import {useAuthState} from "react-firebase-hooks/auth";
+import Dropdown from "./dropdown/dropdown";
 
 export default function Nav() {
     const [user, loading] = useAuthState(auth);
@@ -25,9 +26,7 @@ export default function Nav() {
                         <Link href="/post">
                             <button className="py-2 px-4 text-sm bg-cyan-500 text-white rounded-lg font-medium ml-8">Post</button>
                         </Link>
-                        <Link href="/account">
-                            <img className="w-12 rounded-full cursor-pointer" src={user.photoURL} alt="foto"/>
-                        </Link>
+                        <Dropdown/>
                     </div>
 
                 )
