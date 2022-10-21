@@ -31,62 +31,6 @@ export default function Dropdown() {
                         <Menu.Item>
                             {({ active }) => (
                                 <a
-                                    href="/overview/textblock"
-                                    className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                        'block px-4 py-2 text-sm'
-                                    )}
-                                >
-                                    Text block index
-                                </a>
-                            )}
-                        </Menu.Item>
-
-                        <Menu.Item>
-                            {({ active }) => (
-                                <a
-                                    href="/overview/service"
-                                    className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                        'block px-4 py-2 text-sm'
-                                    )}
-                                >
-                                    Service index
-                                </a>
-                            )}
-                        </Menu.Item>
-
-                        <Menu.Item>
-                            {({ active }) => (
-                                <a
-                                    href="/post"
-                                    className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                        'block px-4 py-2 text-sm'
-                                    )}
-                                >
-                                    Create post
-                                </a>
-                            )}
-                        </Menu.Item>
-
-                        <Menu.Item>
-                            {({ active }) => (
-                                <a
-                                    href="/make/service"
-                                    className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                        'block px-4 py-2 text-sm'
-                                    )}
-                                >
-                                    Create service
-                                </a>
-                            )}
-                        </Menu.Item>
-
-                        <Menu.Item>
-                            {({ active }) => (
-                                <a
                                     href="/dashboard"
                                     className={classNames(
                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',

@@ -7,7 +7,7 @@ import {collection, onSnapshot, query, where, doc, deleteDoc} from "firebase/fir
 import {db} from "../../../utils/firebase";
 import {toast} from "react-toastify";
 
-export default function index() {
+export default function ServiceTable() {
     const route = useRouter();
     const [user, loading] = useAuthState(auth)
     const [services, setServices] = useState([])
@@ -59,7 +59,7 @@ export default function index() {
                             Action
                         </th>
                         <th scope="col" className="py-3 px-6">
-                            <Link href="/overview/service">
+                            <Link href="/create/service">
                                 <button  className="py-2 px-4 text-sm bg-green-500 text-white rounded-lg font-medium ml-8">Create new</button>
                             </Link>
                         </th>
@@ -84,7 +84,7 @@ export default function index() {
                             </td>
                             <td className="py-4 px-6">
                                 <div className="flex gap-4">
-                                    <Link href={{pathname: '/make/service', query: service}}>
+                                    <Link href={{pathname: '/create/service', query: service}}>
                                         <button
                                             className="text-teal-600 flex items-center justify-center gap-2 text-sm py-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
