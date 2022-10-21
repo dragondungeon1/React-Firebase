@@ -53,7 +53,7 @@ export default function ShortcutTable() {
                             Route
                         </th>
                         <th scope="col" className="py-3 px-6">
-                            Action
+                            Actions
                         </th>
                         <th scope="col" className="py-3 px-6">
                             <Link href="/create/shortcut">

@@ -57,7 +57,7 @@ export default function TextblockTable() {
                             User
                         </th>
                         <th scope="col" className="py-3 px-6">
-                            Action
+                            Actions
                         </th>
                         <th scope="col" className="py-3 px-6">
                             <Link href="/create/post">

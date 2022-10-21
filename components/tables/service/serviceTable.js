@@ -44,7 +44,7 @@ export default function ServiceTable() {
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
                         <th scope="col" className="py-3 px-6">
-                            text-block ID
+                            Service ID
                         </th>
                         <th scope="col" className="py-3 px-6">
                             Title
@@ -56,7 +56,7 @@ export default function ServiceTable() {
                             User
                         </th>
                         <th scope="col" className="py-3 px-6">
-                            Action
+                            Actions
                         </th>
                         <th scope="col" className="py-3 px-6">
                             <Link href="/create/service">
