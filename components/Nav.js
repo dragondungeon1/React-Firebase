@@ -9,7 +9,7 @@ export default function Nav() {
 
     return (
         <div>
-        <nav className="flex shadow-lg rounded-lg p-5 justify-between items-center py-10">
+        <nav className="flex shadow-md rounded-lg p-5 justify-between items-center py-10">
             <Link href="/">
                 <button className="text-lg font-medium">
                     creative minds

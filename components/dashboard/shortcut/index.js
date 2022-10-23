@@ -3,7 +3,6 @@ import {useAuthState} from "react-firebase-hooks/auth";
 import {auth, db} from "../../../utils/firebase";
 import {useEffect, useState} from "react";
 import {collection, deleteDoc, doc, onSnapshot, query, where} from "firebase/firestore";
-import {toast} from "react-toastify";
 
 export default function Shortcut() {
 

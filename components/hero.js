@@ -2,7 +2,9 @@ import {collection, onSnapshot, orderBy, query} from "firebase/firestore";
 import {db} from "../utils/firebase";
 import {useEffect, useState} from "react";
 import Message from "./message";
-
+import Image from 'next/image';
+import contentCreator from '/public/svg/content-creator.svg'
+import Title from "./text/title";
 export default function Hero() {
     const [allPosts, setAllPosts] = useState([]);
 
@@ -28,19 +30,18 @@ export default function Hero() {
                         <h1
                             className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl"
                         >
-                            <span className="block xl:inline"> {allPosts.slice(0,1).map(post =>
-                                <Message key={post.id} {...post}>
+                            <span className="block xl:inline text-blue-500"> {allPosts.slice(1,2).map(post =>
+                                <Title key={post.id} {...post}>
 
-                                </Message>)}</span>
-                            <span className="block text-blue-500 xl:inline"
-                            >Tell Your Story!</span
-                            >
+                                </Title>)}</span>
                         </h1>
                         <p
                             className="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl"
                         >
-                            It's never been easier to build beautiful websites that convey
-                            your message and tell your story.
+                            <span className="block xl:inline"> {allPosts.slice(1,2).map(post =>
+                                <Message key={post.id} {...post}>
+
+                                </Message>)}</span>
                         </p>
                         <div className="relative flex flex-col sm:flex-row sm:space-x-4">
                             <a
@@ -59,9 +60,9 @@ export default function Hero() {
                 </div>
                 <div className="w-full md:w-1/2">
                     <div
-                        className="w-full h-auto overflow-hidden rounded-md shadow-xl sm:rounded-xl"
+                        className="w-full h-auto overflow-hidden"
                     >
-                        <img src="~assets/media/svg/hero-image.svg"/>
+                        <Image src={contentCreator}/>
                     </div>
                 </div>
             </div>

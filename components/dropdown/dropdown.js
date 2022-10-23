@@ -1,6 +1,8 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import {FaSignOutAlt} from "react-icons/fa";
+import Signout from "../signout";
 
 
 function classNames(...classes) {
@@ -40,6 +42,10 @@ export default function Dropdown() {
                                     Dashboard
                                 </a>
                             )}
+                        </Menu.Item>
+
+                        <Menu.Item>
+                            <Signout/>
                         </Menu.Item>
 
 
