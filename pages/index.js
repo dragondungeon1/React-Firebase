@@ -6,6 +6,8 @@ import {collection, query, orderBy, onSnapshot} from "firebase/firestore";
 import Hero from "../components/hero";
 import Middle from "../components/home/middle";
 import Faq from "../components/home/faq";
+import Productcard from "../components/product/productcard";
+import Productrow from "../components/home/productrow";
 
 export default function Home() {
     //  create state with all posts
@@ -34,6 +36,7 @@ export default function Home() {
             <Hero/>
             <Middle/>
             <Faq/>
+            <Productrow/>
         </div>
     )
 }
