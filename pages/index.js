@@ -5,6 +5,7 @@ import {db} from "../utils/firebase";
 import {collection, query, orderBy, onSnapshot} from "firebase/firestore";
 import Hero from "../components/hero";
 import Middle from "../components/home/middle";
+import Faq from "../components/home/faq";
 
 export default function Home() {
     //  create state with all posts
@@ -32,17 +33,7 @@ export default function Home() {
 
             <Hero/>
             <Middle/>
-
-            <div className="ny-12 text-lg font-medium mt-20">
-                <h2>See what people are saying</h2>
-                <div className="flex justify-evenly gap-2 flex-wrap">
-                    {allPosts.map(post =>
-                        <Message key={post.id} {...post}>
-
-                        </Message>)}
-                </div>
-
-            </div>
+            <Faq/>
         </div>
     )
 }

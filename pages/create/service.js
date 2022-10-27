@@ -33,10 +33,10 @@ export default function service() {
         }
 
         if (service.hasOwnProperty('id')) {
-            const docRef = doc(db, 'posts', service.id);
+            const docRef = doc(db, 'services', service.id);
             const updatedService = {...service, timestamp: serverTimestamp()};
             await updateDoc(docRef, updatedService);
-            return route.push('/')
+            return route.push('/dashboard')
         } else {
 
             //make new post
@@ -51,7 +51,7 @@ export default function service() {
                 username: user.displayName
             });
             setService({shortDescription: ""});
-            return route.push('/')
+            return route.push('/dashboard')
         }
     };
 
