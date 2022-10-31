@@ -2,7 +2,7 @@ export default function Productcard(){
     return (
 
         <div
-            className="p-4 w-full max-w-sm bg-white rounded-lg border shadow-md sm:p-8">
+            className="p-4 w-full max-w-sm bg-white rounded-md shadow-md sm:p-8">
             <h5 className="mb-4 text-xl font-medium text-gray-500 ">Product title</h5>
             <div className="flex items-baseline text-gray-900">
                 <span className="text-3xl font-semibold">$</span>

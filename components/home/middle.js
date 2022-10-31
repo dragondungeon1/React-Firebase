@@ -52,7 +52,7 @@ export default function Index() {
                 <div>
                     <h2 className="text-3xl  font-bold tracking-tight text-gray-900 sm:text-4xl"><span
                         className="block xl:inline text-blue-500">
-                        {allPosts.slice(1, 2).map(post =>
+                        {allPosts.slice(0, 1).map(post =>
                             <Title key={post.id} {...post}>
                                 {post.title}
                             </Title>
@@ -60,7 +60,7 @@ export default function Index() {
                         </span></h2>
                     <p className="mt-4 text-gray-500">
                         <span className="block xl:inline">
-                            {allPosts.slice(0,5).map(post =>
+                            {allPosts.slice(0,1).map(post =>
                             <Message key={post.id} {...post}>
                             </Message>
                         )}
