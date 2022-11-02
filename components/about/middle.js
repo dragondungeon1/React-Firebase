@@ -1,6 +1,6 @@
 export default function Middle() {
     return (
-        <div className="container max-w-6xl mx-auto font-poppins mt-6">
+        <div className="container mt-12 max-w-6xl mx-auto font-poppins mt-6">
             <h2 className="text-4xl font-bold tracking-tight text-center">
                 Programming laguages
             </h2>

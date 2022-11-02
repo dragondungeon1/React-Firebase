@@ -15,6 +15,11 @@ export default function Nav() {
                     creative minds
                 </button>
             </Link>
+            <Link href="/about">
+                <button className="text-lg font-medium">
+                   About
+                </button>
+            </Link>
             <ul className="flex items-center gap-10">
                 {!user && (
                     <Link href="/auth/login">
