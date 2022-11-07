@@ -18,14 +18,14 @@ const features = [
 ]
 
 export default function Index() {
-    const [allServices, setAllServices] = useState([]);
+    const [allTechnologies, setAllTechnologies] = useState([]);
     const [allPosts, setAllPosts] = useState([]);
 
-    const getServices = async () => {
-        const collectionRef = collection(db, 'services')
+    const getTechnologies = async () => {
+        const collectionRef = collection(db, 'technologies')
         const q = query(collectionRef, orderBy('timestamp', 'asc'))
         const unsubscribe = onSnapshot(q, (snapshot) => {
-            setAllServices(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
+            setAllTechnologies(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
             return unsubscribe;
         });
     };
@@ -42,7 +42,7 @@ export default function Index() {
     };
 
     useEffect(() => {
-        getServices();
+        getTechnologies();
         getPosts()
     }, []);
     return (
@@ -68,11 +68,11 @@ export default function Index() {
                     </p>
 
                     <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-                        {allServices.slice(0, 4).map((service) => (
+                        {allTechnologies.slice(0, 4).map((technologies) => (
 
-                            <div key={service.id} className="border-t border-gray-200 pt-4">
-                                <dt className="font-medium text-blue-500">{service.title}</dt>
-                                <dd className="mt-2 text-sm text-gray-500">{service.shortDescription}</dd>
+                            <div key={technologies.id} className="border-t border-gray-200 pt-4">
+                                <dt className="font-medium text-blue-500">{technologies.title}</dt>
+                                <dd className="mt-2 text-sm text-gray-500">{technologies.shortDescription}</dd>
                             </div>
                         ))}
                     </dl>
