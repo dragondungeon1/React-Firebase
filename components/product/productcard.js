@@ -1,91 +1,28 @@
-export default function Productcard(){
+export default function Productcard({title}, {description}){
     return (
 
-        <div
-            className="p-4 w-full max-w-sm bg-white rounded-md shadow-md sm:p-8">
-            <h5 className="mb-4 text-xl font-medium text-gray-500 ">Product title</h5>
-            <div className="flex items-baseline text-gray-900">
-                <span className="text-3xl font-semibold">$</span>
-                <span className="text-5xl font-extrabold tracking-tight">49</span>
-                <span className="ml-1 text-xl font-normal text-gray-500">/month</span>
+        <div className="h-screen">
+            <div className="w-80 mt-24 m-auto lg:mt-16 max-w-sm">
+                <img src="https://image.freepik.com/free-vector/app-development-illustration_52683-47931.jpg" alt=""className="rounded-t-2xl shadow-2xl lg:w-full 2xl:w-full 2xl:h-44 object-cover"/>
+                <div className="bg-white shadow-2xl rounded-b-3xl">
+                    <h2 className="text-center text-gray-800 text-2xl font-bold pt-6">Order Summary</h2>
+                    <div className="w-5/6 m-auto">
+                        <p className="text-center text-gray-500 pt-5">You can now listen to millions of songs, audiobooks ands podcasts on any device anywhere you like!</p>
+                    </div>
+                    <div className="grid grid-cols-4 w-72 lg:w-5/6 m-auto bg-indigo-50 mt-5 p-4 lg:p-4 rounded-2xl">
+                        <div className="col-span-1">
+                            <img className="w-15 lg:w-12" src="https://img.icons8.com/ultraviolet/40/000000/musical-notes.png" alt="music icon"/>
+                        </div>
+                        <div className="col-span-2 pt-1">
+                            <p className="text-gray-800 font-bold lg:text-sm">Anual Plan</p>
+                            <p className="text-gray-500 text-sm">$59.99/year</p>
+                        </div>
+                    </div>
+                    <div className="bg-blue-700 w-72 lg:w-5/6 m-auto mt-6 p-2 hover:bg-indigo-500 rounded-2xl  text-white text-center shadow-xl shadow-bg-blue-700">
+                        <button classNames="lg:text-sm text-lg font-bold">More information</button>
+                    </div>
+                </div>
             </div>
-            <ul role="list" className="my-7 space-y-5">
-                <li className="flex space-x-3">
-                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600"
-                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check
-                        icon</title>
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500">2 team members</span>
-                </li>
-                <li className="flex space-x-3">
-                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600"
-                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check
-                        icon</title>
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500">20GB Cloud storage</span>
-                </li>
-                <li className="flex space-x-3">
-                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600"
-                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check
-                        icon</title>
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500">Integration help</span>
-                </li>
-                <li className="flex space-x-3 line-through decoration-gray-500">
-                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-gray-400"
-                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check
-                        icon</title>
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
-                </li>
-                <li className="flex space-x-3 line-through decoration-gray-500">
-                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-gray-400"
-                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check
-                        icon</title>
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500">API Access</span>
-                </li>
-                <li className="flex space-x-3 line-through decoration-gray-500">
-                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-gray-400"
-                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check
-                        icon</title>
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                    <span className="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
-                </li>
-                <li className="flex space-x-3 line-through decoration-gray-500">
-                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-gray-400"
-                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check
-                        icon</title>
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                    <span
-                        className="text-base font-normal leading-tight text-gray-500">24×7 phone &amp; email support</span>
-                </li>
-            </ul>
-            <button type="button"
-                    className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose
-                plan
-            </button>
         </div>
 
     )

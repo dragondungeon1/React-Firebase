@@ -4,7 +4,7 @@ import {useAuthState} from "react-firebase-hooks/auth";
 import Dropdown from "./dropdown/dropdown";
 
 export default function Nav() {
-    const [user, loading] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
 
     return (

@@ -6,13 +6,22 @@ import {getFirestore} from 'firebase/firestore'
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// const firebaseConfig = {
+//     apiKey: process.env.NEXT_PUBLIC_API_KEY,
+//     authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+//     projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+//     storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+//     messagingSenderId: process.env.NEXT_PUBLIC_MESSAGIN_SENDER_ID,
+//     appId: process.env.NEXT_PUBLIC_APP_ID,
+// };
+
 const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
-    storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_MESSAGIN_SENDER_ID,
-    appId: process.env.NEXT_PUBLIC_APP_ID,
+    apiKey: "AIzaSyA9yH1yf_AlFXP9KYkPmlxZUtWMZgreyx0",
+    authDomain: "fullstack-react-9aebf.firebaseapp.com",
+    projectId: "fullstack-react-9aebf",
+    storageBucket: "fullstack-react-9aebf.appspot.com",
+    messagingSenderId: "825004731300",
+    appId: "1:825004731300:web:70f4421d45ecacde1eef31"
 };
 
 // Initialize Firebase
