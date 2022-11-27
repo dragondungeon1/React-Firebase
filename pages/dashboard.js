@@ -4,6 +4,7 @@ import TextblockTable from "../components/tables/texblock/textblockTable";
 import ShortcutTable from "../components/tables/shortcut/shortcutTable";
 import Shortcut from "../components/dashboard/shortcut";
 import TechnologieTable from "../components/tables/technologies/technologieTable";
+import ProductTable from "../components/tables/product/table";
 
 export default function Dashboard() {
     const [openTab, setOpenTab] = useState(1);
@@ -82,6 +83,18 @@ export default function Dashboard() {
                                         <span className="mx-4 font-medium">Technologies</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a className="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
+                                       href="#"
+                                       onClick={() => setOpenTab(6)}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                             strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                            <path strokeLinecap="round" strokeLinejoin="round"
+                                                  d="M12 4.5v15m7.5-7.5h-15"/>
+                                        </svg>
+                                        <span className="mx-4 font-medium">Products</span>
+                                    </a>
+                                </li>
                             </ul>
 
                         </aside>
@@ -110,6 +123,9 @@ export default function Dashboard() {
                     </div>
                     <div className={openTab === 5 ? "block" : "hidden"}>
                         <TechnologieTable/>
+                    </div>
+                    <div className={openTab === 6 ? "block" : "hidden"}>
+                        <ProductTable/>
                     </div>
                 </div>
             </div>
