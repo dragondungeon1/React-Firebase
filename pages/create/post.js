@@ -51,7 +51,7 @@ export default function post() {
                 username: user.displayName
             });
             setPost({description: ""});
-            return route.push('/')
+            return route.push('/dashboard')
         }
     };
 

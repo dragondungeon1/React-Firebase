@@ -50,7 +50,7 @@ export default function Product() {
                 username: user.displayName
             });
             setProduct({description: ""});
-            return route.push('/')
+            return route.push('/dashboard')
         }
     };
 
