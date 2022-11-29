@@ -51,7 +51,7 @@ export default function Shortcut() {
                 username: user.displayName
             });
             setShortcut({route: ""});
-            return route.push('/')
+            return route.push('/dashboard')
         }
     };
 

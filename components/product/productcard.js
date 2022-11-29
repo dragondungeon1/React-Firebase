@@ -1,28 +1,24 @@
-export default function Productcard({title}, {description}){
+export default function Productcard(props){
     return (
-
-        <div className="h-screen">
-            <div className="w-80 mt-24 m-auto lg:mt-16 max-w-sm">
-                <img src="https://image.freepik.com/free-vector/app-development-illustration_52683-47931.jpg" alt=""className="rounded-t-2xl shadow-2xl lg:w-full 2xl:w-full 2xl:h-44 object-cover"/>
-                <div className="bg-white shadow-2xl rounded-b-3xl">
-                    <h2 className="text-center text-gray-800 text-2xl font-bold pt-6">Order Summary</h2>
-                    <div className="w-5/6 m-auto">
-                        <p className="text-center text-gray-500 pt-5">You can now listen to millions of songs, audiobooks ands podcasts on any device anywhere you like!</p>
-                    </div>
-                    <div className="grid grid-cols-4 w-72 lg:w-5/6 m-auto bg-indigo-50 mt-5 p-4 lg:p-4 rounded-2xl">
-                        <div className="col-span-1">
-                            <img className="w-15 lg:w-12" src="https://img.icons8.com/ultraviolet/40/000000/musical-notes.png" alt="music icon"/>
-                        </div>
-                        <div className="col-span-2 pt-1">
-                            <p className="text-gray-800 font-bold lg:text-sm">Anual Plan</p>
-                            <p className="text-gray-500 text-sm">$59.99/year</p>
-                        </div>
-                    </div>
-                    <div className="bg-blue-700 w-72 lg:w-5/6 m-auto mt-6 p-2 hover:bg-indigo-500 rounded-2xl  text-white text-center shadow-xl shadow-bg-blue-700">
-                        <button classNames="lg:text-sm text-lg font-bold">More information</button>
-                    </div>
-                </div>
-            </div>
+        <div
+            className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+            </svg>
+            <p>
+                <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900">{props.title}</h5>
+            </p>
+            <p className="mb-3 font-normal text-gray-500 ">{props.shortDescription}</p>
+            <a href={props.link} className="inline-flex items-center text-blue-600 hover:underline">
+                {props.cta}
+                <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                    <path
+                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+                </svg>
+            </a>
         </div>
 
     )
