@@ -30,7 +30,7 @@ export default function Hero() {
                         <h1
                             className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl"
                         >
-                            <span className="block xl:inline text-blue-500"> {allPosts.slice(1,2).map(post =>
+                            <span className="block xl:inline text-blue-300"> {allPosts.slice(1,2).map(post =>
                                 <Title key={post.id} {...post}>
 
                                 </Title>)}</span>
@@ -46,7 +46,7 @@ export default function Hero() {
                         <div className="relative flex flex-col sm:flex-row sm:space-x-4">
                             <a
                                 href=""
-                                className="py-2 px-2 font-medium text-blue-500 border-blue-500 border-2 rounded hover:bg-blue-500 hover:text-white transition duration-300"
+                                className="py-2 px-2 font-medium text-blue-300 border-blue-300 border-2 rounded hover:bg-blue-300 hover:text-white transition duration-300"
                             >Learn more</a
                             >
                             <a

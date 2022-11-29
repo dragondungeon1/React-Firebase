@@ -25,6 +25,11 @@ export default function Nav() {
                     Contact
                 </button>
             </Link>
+            <Link href="/product">
+                <button className="text-lg font-medium">
+                    Product
+                </button>
+            </Link>
             <ul className="flex items-center gap-10">
                 {!user && (
                     <Link href="/auth/login">
