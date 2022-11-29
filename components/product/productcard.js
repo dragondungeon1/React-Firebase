@@ -9,7 +9,7 @@ export default function Productcard(props){
                 <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900">{props.title}</h5>
             </p>
             <p className="mb-3 font-normal text-gray-500 ">{props.shortDescription}</p>
-            <a href={props.link} className="inline-flex items-center text-blue-600 hover:underline">
+            <a href={props.link} className="inline-flex items-center text-blue-300 hover:underline">
                 {props.cta}
                 <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"
                      xmlns="http://www.w3.org/2000/svg">
