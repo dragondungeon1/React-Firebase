@@ -6,10 +6,9 @@ import Dropdown from "./dropdown/dropdown";
 export default function Nav() {
     const [user] = useAuthState(auth);
 
-
     return (
         <div>
-        <nav className="flex shadow-md rounded-lg p-5 justify-between items-center py-10">
+        <nav className="flex shadow-md rounded-lg p-5 justify-between items-center py-4">
             <Link href="/">
                 <button className="text-lg font-medium">
                     creative minds
