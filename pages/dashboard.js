@@ -4,7 +4,7 @@ import TextblockTable from "../components/tables/texblock/textblockTable";
 import ShortcutTable from "../components/tables/shortcut/shortcutTable";
 import Shortcut from "../components/dashboard/shortcut";
 import TechnologieTable from "../components/tables/technologies/technologieTable";
-import ProductTable from "../components/tables/product/productTable";
+import ProductTable from "../components/tables/product/table";
 
 export default function Dashboard() {
     const [openTab, setOpenTab] = useState(1);

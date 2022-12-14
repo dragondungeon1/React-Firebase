@@ -10,7 +10,7 @@ import {toast} from 'react-toastify'
 
 export default function service() {
     //form state
-    const [service, setService] = useState({shortDescription: "", title: ""});
+    const [service, setService] = useState({description: "", title: ""});
     const [user, loading] = useAuthState(auth);
     const route = useRouter();
     const routeData = route.query;
@@ -21,12 +21,12 @@ export default function service() {
         e.preventDefault();
 
         //run checks a
-        if (service.shortDescription.length > 300) {
-            toast.error('shortDescription is too long!')
+        if (service.description.length > 300) {
+            toast.error('description is too long!')
             return;
         }
-        if (!service.shortDescription) {
-            toast.error('shortDescription is empty')
+        if (!service.description) {
+            toast.error('description is empty')
             return;
         } else {
             toast.success('post successfull')
@@ -50,7 +50,7 @@ export default function service() {
                 avatar: user.photoURL,
                 username: user.displayName
             });
-            setService({shortDescription: ""});
+            setService({description: ""});
             return route.push('/dashboard')
         }
     };
@@ -60,7 +60,7 @@ export default function service() {
         if (loading) return;
         if (!user) route.push("auth/login");
         if (routeData.id) {
-            setService({shortDescription: routeData.shortDescription, id: routeData.id, title: routeData.title})
+            setService({description: routeData.description, id: routeData.id, title: routeData.title})
         }
     };
 
@@ -81,15 +81,13 @@ export default function service() {
                               onChange={(e) => setService({...service, title: e.target.value})}
                               className="bg-gray-800 h-12 w-full text-white rounded-lg p-2 text-small">
                     </input>
-                    <p className={`text-cyan-600 font-medium text-sm ${service.title.length > 100 ? 'text-red-600' : ''}`}>{service.title.length}/100</p>
                 </div>
                 <div className="py-2">
-                    <h3 className="text-lg font-medium py-2">shortDescription</h3>
-                    <textarea value={service.shortDescription}
-                              onChange={(e) => setService({...service, shortDescription: e.target.value})}
+                    <h3 className="text-lg font-medium py-2">description</h3>
+                    <textarea value={service.description}
+                              onChange={(e) => setService({...service, description: e.target.value})}
                               className="bg-gray-800 h-48 w-full text-white rounded-lg p-2 text-small">
                     </textarea>
-                    <p className={`text-cyan-600 font-medium text-sm ${service.shortDescription.length > 300 ? 'text-red-600' : ''}`}>{service.shortDescription.length}/300</p>
                 </div>
                 <button
                     type="submit"
