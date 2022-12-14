@@ -75,7 +75,7 @@ export default function Faq() {
     return (
         <section className="leading-relaxed max-w-screen-xl mt-12 mx-auto px-4 lg:px-8 border-t border-gray-200">
             <div className="space-y-3 text-center mt-6">
-                <h1 className="text-3xl text-blue-500 font-semibold">
+                <h1 className="text-3xl text-blue-300 font-semibold">
                     Frequently Asked Questions
                 </h1>
                 <p className="text-gray-600 max-w-lg mx-auto text-lg">

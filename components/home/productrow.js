@@ -40,7 +40,7 @@ export default function Productrow() {
 // {allTechnologies.slice(0, 4).map((technologies) => (
 //
 //     <div key={technologies.id} className="border-t border-gray-200 pt-4">
-//         <dt className="font-medium text-blue-500">{technologies.title}</dt>
+//         <dt className="font-medium text-blue-300">{technologies.title}</dt>
 //         <dd className="mt-2 text-sm text-gray-500">{technologies.shortDescription}</dd>
 //     </div>
 // ))}

@@ -34,8 +34,8 @@ export default function Product() {
 
         if (product?.hasOwnProperty('id')) {
             const docRef = doc(db, 'products', product.id);
-            const updatedproduct = {...product, timestamp: serverTimestamp()};
-            await updateDoc(docRef, updatedproduct);
+            const updatedProduct = {...product, timestamp: serverTimestamp()};
+            await updateDoc(docRef, updatedProduct);
             return route.push('/')
         } else {
 
@@ -47,10 +47,11 @@ export default function Product() {
                 ...product,
                 timestamp: serverTimestamp(),
                 user: user.uid,
+                avatar: user.photoURL,
                 username: user.displayName
             });
             setProduct({description: ""});
-            return route.push('/dashboard')
+            return route.push('/')
         }
     };
 
@@ -59,7 +60,7 @@ export default function Product() {
         if (loading) return;
         if (!user) route.push("auth/login");
         if (routeData.id) {
-            setProduct({description: routeData.description, id: routeData.id, title: routeData.title, cta: routeData.cta, link: routeData.link })
+            setProduct({description: routeData.description, id: routeData.id, title: routeData.title})
         }
     };
 
@@ -89,22 +90,6 @@ export default function Product() {
                               className="bg-gray-800 h-48 w-full text-white rounded-lg p-2 text-small">
                     </textarea>
                     <p className={`text-cyan-600 font-medium text-sm ${product.description.length > 300 ? 'text-red-600' : ''}`}>{product.description.length}/300</p>
-                </div>
-                <div className="py-2">
-                    <h3 className="text-lg font-medium py-2">Link to</h3>
-                    <input value={product.link}
-                           onChange={(e) => setProduct({...product, link: e.target.value})}
-                           className="bg-gray-800 h-12 w-full text-white rounded-lg p-2 text-small">
-                    </input>
-                    {/*<p className={`text-cyan-600 font-medium text-sm ${product.title.length > 100 ? 'text-red-600' : ''}`}>{product.title.length}/100</p>*/}
-                </div>
-                <div className="py-2">
-                    <h3 className="text-lg font-medium py-2">Call to action</h3>
-                    <input value={product.cta}
-                           onChange={(e) => setProduct({...product, cta: e.target.value})}
-                           className="bg-gray-800 h-12 w-full text-white rounded-lg p-2 text-small">
-                    </input>
-                    {/*<p className={`text-cyan-600 font-medium text-sm ${product.title.length > 100 ? 'text-red-600' : ''}`}>{product.title.length}/100</p>*/}
                 </div>
                 <button
                     type="submit"

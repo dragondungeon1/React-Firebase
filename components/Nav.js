@@ -4,7 +4,7 @@ import {useAuthState} from "react-firebase-hooks/auth";
 import Dropdown from "./dropdown/dropdown";
 
 export default function Nav() {
-    const [user, loading] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
 
     return (
@@ -23,6 +23,11 @@ export default function Nav() {
             <Link href="/contact">
                 <button className="text-lg font-medium">
                     Contact
+                </button>
+            </Link>
+            <Link href="/product">
+                <button className="text-lg font-medium">
+                    Product
                 </button>
             </Link>
             <ul className="flex items-center gap-10">
