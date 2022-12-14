@@ -6,6 +6,7 @@ import {collection} from 'firebase/firestore'
 import {addDoc} from 'firebase/firestore'
 import {serverTimestamp, doc, updateDoc} from 'firebase/firestore'
 import {toast} from 'react-toastify'
+import Form from "../../components/create/form";
 
 
 export default function Product() {
@@ -71,32 +72,11 @@ export default function Product() {
 
     return (
         <div className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto">
-            <form onSubmit={submitProduct}>
-                <h1 className="text-2xl font-bold">
-                    {product.hasOwnProperty('id') ? 'Edit product' : 'Create a new product'}
-                </h1>
-                <div className="py-2">
-                    <h3 className="text-lg font-medium py-2">title</h3>
-                    <input value={product.title}
-                           onChange={(e) => setProduct({...product, title: e.target.value})}
-                           className="bg-gray-800 h-12 w-full text-white rounded-lg p-2 text-small">
-                    </input>
-                    {/*<p className={`text-cyan-600 font-medium text-sm ${product.title.length > 100 ? 'text-red-600' : ''}`}>{product.title.length}/100</p>*/}
-                </div>
-                <div className="py-2">
-                    <h3 className="text-lg font-medium py-2">Description</h3>
-                    <textarea value={product.description}
-                              onChange={(e) => setProduct({...product, description: e.target.value})}
-                              className="bg-gray-800 h-48 w-full text-white rounded-lg p-2 text-small">
-                    </textarea>
-                    <p className={`text-cyan-600 font-medium text-sm ${product.description.length > 300 ? 'text-red-600' : ''}`}>{product.description.length}/300</p>
-                </div>
-                <button
-                    type="submit"
-                    className="w-full bg-cyan-600 text-white font-medium p-2 my-2 rounded-lg text-small">
-                    {product.hasOwnProperty('id') ? 'Save and submit' : 'Create a new product'}
-                </button>
-            </form>
+            <Form
+                entity={product}
+                submitFunction={submitProduct}
+                setFunction={setProduct}
+            />
         </div>
     )
 }

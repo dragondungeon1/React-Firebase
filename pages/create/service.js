@@ -6,6 +6,7 @@ import {collection} from 'firebase/firestore'
 import {addDoc} from 'firebase/firestore'
 import {serverTimestamp, doc, updateDoc} from 'firebase/firestore'
 import {toast} from 'react-toastify'
+import Form from "../../components/create/form";
 
 
 export default function service() {
@@ -71,30 +72,11 @@ export default function service() {
 
     return (
         <div className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto">
-            <form onSubmit={submitService}>
-                <h1 className="text-2xl font-bold">
-                    {service.hasOwnProperty('id') ? 'Edit service' : 'Create a new service'}
-                </h1>
-                <div className="py-2">
-                    <h3 className="text-lg font-medium py-2">title</h3>
-                    <input value={service.title}
-                              onChange={(e) => setService({...service, title: e.target.value})}
-                              className="bg-gray-800 h-12 w-full text-white rounded-lg p-2 text-small">
-                    </input>
-                </div>
-                <div className="py-2">
-                    <h3 className="text-lg font-medium py-2">description</h3>
-                    <textarea value={service.description}
-                              onChange={(e) => setService({...service, description: e.target.value})}
-                              className="bg-gray-800 h-48 w-full text-white rounded-lg p-2 text-small">
-                    </textarea>
-                </div>
-                <button
-                    type="submit"
-                    className="w-full bg-cyan-600 text-white font-medium p-2 my-2 rounded-lg text-small">
-                    {service.hasOwnProperty('id') ? 'Save and submit' : 'Create a new service'}
-                </button>
-            </form>
+            <Form
+                entity={service}
+                submitFunction={submitService}
+                setFunction={setService}
+            />
         </div>
     )
 }
