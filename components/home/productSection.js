@@ -1,8 +1,5 @@
 import Image from "next/image";
 import offer from "../../public/svg/offer.svg";
-import Title from "../text/title";
-import Message from "../message";
-import react from "../../public/svg/react.svg";
 import Productcard from "../product/productcard";
 import {collection, onSnapshot, orderBy, query} from "firebase/firestore";
 import {db} from "../../utils/firebase";

@@ -5,9 +5,6 @@ import Message from "../message";
 import Title from "../text/title";
 import react from '/public/svg/react.svg'
 import services from '/public/svg/service.svg'
-import firebase from '/public/svg/firebase.svg'
-import tailwind from '/public/svg/taildwindcss.svg'
-import symfony from '/public/svg/symgony.svg'
 import Image from 'next/image';
 
 
@@ -74,7 +71,7 @@ export default function Index() {
                     </p>
 
                     <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-                        {allTechnologies.slice(0, 4).map((technologies) => (
+                        {allTechnologies.map((technologies) => (
 
                             <div key={technologies.id} className="border-t border-gray-200 pt-4">
                                 <Image src={react}/>

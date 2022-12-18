@@ -12,8 +12,8 @@ export default function TextblockTable() {
     const route = useRouter();
     const [user, loading] = useAuthState(auth)
     const [posts, setPosts] = useState([])
-    //see if user is logged in
 
+    //see if user is logged in
     const getData = async () => {
         if (loading) return;
         if (!user) return route.push('auth/login');
@@ -26,7 +26,6 @@ export default function TextblockTable() {
     };
 
     //delete
-
     const deletePost = async (id) => {
         //sub doc
         // const docRef = doc(db, 'posts', id, 'moreInfo, doc)
