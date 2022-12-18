@@ -8,6 +8,7 @@ import Middle from "../components/home/middle";
 import Faq from "../components/home/faq";
 import Productcard from "../components/product/productcard";
 import Productrow from "../components/home/productrow";
+import ProductSection from "../components/home/productSection";
 
 export default function Home() {
     //  create state with all posts
@@ -36,7 +37,7 @@ export default function Home() {
             <Hero/>
             <Middle/>
             <Faq/>
-            <Productrow/>
+            <ProductSection/>
         </div>
     )
 }

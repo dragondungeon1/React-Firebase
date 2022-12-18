@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: 'Poppins',
-      }
+      },
+      visibility: ["group-hover"],
     },
   },
   plugins: [

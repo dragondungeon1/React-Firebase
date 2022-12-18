@@ -3,7 +3,7 @@ import {db} from "../utils/firebase";
 import {useEffect, useState} from "react";
 import Message from "./message";
 import Image from 'next/image';
-import contentCreator from '/public/svg/content-creator.svg'
+import developer from '/public/svg/developer.svg'
 import Title from "./text/title";
 export default function Hero() {
     const [allPosts, setAllPosts] = useState([]);
@@ -30,7 +30,7 @@ export default function Hero() {
                         <h1
                             className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl"
                         >
-                            <span className="block xl:inline text-blue-300"> {allPosts.slice(1,2).map(post =>
+                            <span className="block xl:inline "> {allPosts.slice(1,2).map(post =>
                                 <Title key={post.id} {...post}>
 
                                 </Title>)}</span>
@@ -46,7 +46,7 @@ export default function Hero() {
                         <div className="relative flex flex-col sm:flex-row sm:space-x-4">
                             <a
                                 href=""
-                                className="py-2 px-2 font-medium text-blue-300 border-blue-300 border-2 rounded hover:bg-blue-300 hover:text-white transition duration-300"
+                                className="py-2 px-2 font-medium text-green-600 border-green-600 border-2 rounded hover:bg-green-600 hover:text-white transition duration-300"
                             >Learn more</a
                             >
                             <a
@@ -62,7 +62,7 @@ export default function Hero() {
                     <div
                         className="w-full h-auto overflow-hidden"
                     >
-                        <Image src={contentCreator}/>
+                        <Image src={developer}/>
                     </div>
                 </div>
             </div>

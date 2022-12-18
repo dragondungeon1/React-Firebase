@@ -4,6 +4,7 @@ import {db} from "../../utils/firebase";
 import Message from "../message";
 import Title from "../text/title";
 import react from '/public/svg/react.svg'
+import services from '/public/svg/service.svg'
 import firebase from '/public/svg/firebase.svg'
 import tailwind from '/public/svg/taildwindcss.svg'
 import symfony from '/public/svg/symgony.svg'
@@ -46,12 +47,17 @@ export default function Index() {
         getPosts()
     }, []);
     return (
-        <div className="bg-gray-50 rounded-lg mt-5">
+        <div className="rounded-lg mt-5">
             <div
                 className="mx-auto  grid lg:max-w-[88%] max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+
+                <div className="justify-center">
+                    <Image src={services}/>
+                </div>
+
                 <div>
                     <h2 className="text-3xl  font-bold tracking-tight text-gray-900 sm:text-4xl"><span
-                        className="block xl:inline text-blue-300">
+                        className="block xl:inline">
                         {allPosts.slice(0, 1).map(post =>
                             <Title key={post.id} {...post}>
                                 {post.title}
@@ -61,9 +67,9 @@ export default function Index() {
                     <p className="mt-4 text-gray-500">
                         <span className="block xl:inline">
                             {allPosts.slice(0,1).map(post =>
-                            <Message key={post.id} {...post}>
-                            </Message>
-                        )}
+                                <Message key={post.id} {...post}>
+                                </Message>
+                            )}
                         </span>
                     </p>
 
@@ -71,21 +77,12 @@ export default function Index() {
                         {allTechnologies.slice(0, 4).map((technologies) => (
 
                             <div key={technologies.id} className="border-t border-gray-200 pt-4">
-                                <dt className="font-medium text-blue-300">{technologies.title}</dt>
-                                <dd className="mt-2 text-sm text-gray-500">{technologies.shortDescription}</dd>
+                                <Image src={react}/>
+                                <dt className="font-medium">{technologies.title}</dt>
+                                <dd className="mt-2 text-sm text-gray-500">{technologies.description}</dd>
                             </div>
                         ))}
                     </dl>
-                </div>
-                <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-                    <Image src={react}
-                    />
-                    <Image src={firebase}
-                    />
-                    <Image src={tailwind}
-                    />
-                    <Image src={symfony}
-                    />
                 </div>
             </div>
         </div>

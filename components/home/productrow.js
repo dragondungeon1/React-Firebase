@@ -19,7 +19,7 @@ export default function Productrow() {
         getProducts();
     }, []);
     return (
-        <div className="bg-gray-50 rounded-lg px-6 py-8 mt-10">
+        <div className=" rounded-lg px-6 py-8 mt-10">
             <div className="flex flex-wrap justify-evenly gap-4">
                 {allProducts.map((product) =>
                     <div className="item">

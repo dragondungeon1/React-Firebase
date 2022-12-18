@@ -23,12 +23,12 @@ const FaqsCard = (props) => {
                 {faqsList.q}
                 {
                     state ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                        <svg width="18" height="2" viewBox="0 0 18 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 1H1" stroke="#30B918" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     ) : (
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                            <path strokeLinecap="round" stroke="#30B918" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                         </svg>
                     )
                 }
@@ -75,7 +75,7 @@ export default function Faq() {
     return (
         <section className="leading-relaxed max-w-screen-xl mt-12 mx-auto px-4 lg:px-8 border-t border-gray-200">
             <div className="space-y-3 text-center mt-6">
-                <h1 className="text-3xl text-blue-300 font-semibold">
+                <h1 className="text-3xl text-green-500 font-semibold">
                     Frequently Asked Questions
                 </h1>
                 <p className="text-gray-600 max-w-lg mx-auto text-lg">

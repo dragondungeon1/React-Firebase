@@ -44,7 +44,7 @@ export default function TextblockTable() {
             <Main
                 entities={posts}
                 removeFunction={deletePost}
-                href='/posts'
+                href='/post'
             />
         </div>
     );

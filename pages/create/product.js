@@ -7,6 +7,7 @@ import {addDoc} from 'firebase/firestore'
 import {serverTimestamp, doc, updateDoc} from 'firebase/firestore'
 import {toast} from 'react-toastify'
 import Form from "../../components/create/form";
+import LinkField from "../../components/fields/linkField";
 
 
 export default function Product() {
@@ -22,16 +23,16 @@ export default function Product() {
         e.preventDefault();
 
         //run checks a
-        if (product.description.length > 300) {
-            toast.error('description is too long!')
-            return;
-        }
-        if (!product.description) {
-            toast.error('description is empty')
-            return;
-        } else {
-            toast.success('product successfull')
-        }
+        // if (product.description.length > 300) {
+        //     toast.error('description is too long!')
+        //     return;
+        // }
+        // if (!product.description) {
+        //     toast.error('description is empty')
+        //     return;
+        // } else {
+        //     toast.success('product successfull')
+        // }
 
         if (product?.hasOwnProperty('id')) {
             const docRef = doc(db, 'products', product.id);
@@ -52,7 +53,7 @@ export default function Product() {
                 username: user.displayName
             });
             setProduct({description: ""});
-            return route.push('/')
+            return route.push('/dashboard')
         }
     };
 
@@ -61,7 +62,7 @@ export default function Product() {
         if (loading) return;
         if (!user) route.push("auth/login");
         if (routeData.id) {
-            setProduct({description: routeData.description, id: routeData.id, title: routeData.title})
+            setProduct({description: routeData.description, id: routeData.id, title: routeData.title, cta: routeData.cta})
         }
     };
 
@@ -76,6 +77,10 @@ export default function Product() {
                 entity={product}
                 submitFunction={submitProduct}
                 setFunction={setProduct}
+                field={product}
+                fieldTitle="CTA"
+                addCtaField={true}
+                addLinkField={true}
             />
         </div>
     )
