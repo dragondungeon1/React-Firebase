@@ -8,6 +8,7 @@ import {useEffect, useState} from "react";
 export default function ProductSection() {
     const [allProducts, setAllProducts] = useState([]);
 
+
     const getProducts = async () => {
         const collectionRef = collection(db, 'products')
         const q = query(collectionRef, orderBy('timestamp', 'asc'))
