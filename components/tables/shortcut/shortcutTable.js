@@ -26,7 +26,6 @@ export default function ShortcutTable() {
     };
 
     //delete
-
     const deleteShortcut = async (id) => {
         //sub doc
         const docRef = doc(db, 'shortcuts', id)

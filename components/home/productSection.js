@@ -22,13 +22,10 @@ export default function ProductSection() {
     }, []);
 
     return (
-        <div className="rounded-lg mt-5">
+        <div className="rounded-lg">
             <div
-                className="mx-auto max-h grid max-h-screen lg:max-w-[88%] max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+                className="mx-auto  grid max-h-screen lg:max-w-[88%] max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8  px-4 sm:px-6  lg:max-w-7xl lg:grid-cols-2 lg:px-8">
 
-                <div className="justify-center">
-                    <Image src={offer}/>
-                </div>
                 <div>
                     <h1 className="text-3xl">
                         What we offer
@@ -47,6 +44,9 @@ export default function ProductSection() {
                     </div>
                 </div>
 
+                <div className="justify-center">
+                    <Image src={offer}/>
+                </div>
 
             </div>
         </div>

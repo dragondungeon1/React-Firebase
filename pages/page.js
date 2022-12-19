@@ -2,6 +2,8 @@ import Productcard from "../components/product/productcard";
 import {collection, onSnapshot, query, where} from "firebase/firestore";
 import {db} from "../utils/firebase";
 import {useEffect, useState} from "react";
+import ProductHero from "../components/Hero/productHero";
+import developer from "/public/svg/hosting.svg";
 
 export default function Page(){
 
@@ -16,7 +18,7 @@ export default function Page(){
 
     const [product, setProduct] = useState([])
     const getProduct = async () => {
-        const collectionRef = collection(db, 'products', )
+        const collectionRef = collection(db, 'products',)
         const q = query(collectionRef, where('link','==', getUrlString()))
         const unsubscribe = onSnapshot(q, (snapshot) => {
             setProduct(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
@@ -32,11 +34,10 @@ export default function Page(){
             <div>
                 {product.map((product) =>
                     <div className="item">
-                        <Productcard
-                            title={product.title}
-                            shortDescription={product.description}
-                            cta={product.cta}
-                            link={product.link}
+                        <ProductHero
+                        title={product.title}
+                        description={product.description}
+                        img={developer}
                         />
                     </div>
                 )}

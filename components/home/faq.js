@@ -1,4 +1,6 @@
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
+import {collection, onSnapshot, orderBy, query} from "firebase/firestore";
+import {db} from "../../utils/firebase";
 
 const FaqsCard = (props) => {
 
@@ -20,7 +22,7 @@ const FaqsCard = (props) => {
             onClick={handleOpenAnswer}
         >
             <h4 className="cursor-pointer pb-5 flex items-center justify-between text-lg text-gray-700 font-medium">
-                {faqsList.q}
+                {props.q}
                 {
                     state ? (
                         <svg width="18" height="2" viewBox="0 0 18 2" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +41,7 @@ const FaqsCard = (props) => {
             >
                 <div>
                     <p className="text-gray-500">
-                        {faqsList.a}
+                        {props.description}
                     </p>
                 </div>
             </div>
@@ -49,28 +51,20 @@ const FaqsCard = (props) => {
 
 export default function Faq() {
 
-    const faqsList = [
-        {
-            q: "What are some random questions to ask?",
-            a: "That's exactly the reason we created this random question generator. There are hundreds of random questions to choose from so you're able to find the perfect random question."
-        },
-        {
-            q: "Do you include common questions?",
-            a: "This generator doesn't include most common questions. The thought is that you can come up with common questions on your own so most of the questions in this generator."
-        },
-        {
-            q: "Can I use this for 21 questions?",
-            a: "Yes! there are two ways that you can use this question generator depending on what you're after. You can indicate that you want 21 questions generated."
-        },
-        {
-            q: "Are these questions for girls or for boys?",
-            a: "The questions in this generator are gender neutral and can be used to ask either male of females (or any other gender the person identifies with)."
-        },
-        {
-            q: "What do you wish you had more talent doing?",
-            a: "If you've been searching for a way to get random questions, you've landed on the correct webpage. We created the Random Question Generator to ask you as many random questions as your heart desires."
-        }
-    ]
+    const [allFaqs, setAllProducts] = useState([]);
+
+    const getProducts = async () => {
+        const collectionRef = collection(db, 'faqs')
+        const q = query(collectionRef, orderBy('timestamp', 'asc'))
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+            setAllProducts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
+            return unsubscribe;
+        });
+        console.log(allFaqs)
+    };
+    useEffect(() => {
+        getProducts();
+    }, []);
 
     return (
         <section className="leading-relaxed max-w-screen-xl mt-12 mx-auto px-4 lg:px-8 border-t border-gray-200">
@@ -84,10 +78,12 @@ export default function Faq() {
             </div>
             <div className="mt-14 max-w-2xl mx-auto">
                 {
-                    faqsList.map((item, idx) => (
+                    allFaqs.map((item, idx) => (
                         <FaqsCard
                             idx={idx}
                             faqsList={item}
+                            q={item.title}
+                            description={item.description}
                         />
                     ))
                 }

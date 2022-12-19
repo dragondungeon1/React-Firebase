@@ -6,14 +6,7 @@ import Title from "../text/title";
 import react from '/public/svg/react.svg'
 import services from '/public/svg/service.svg'
 import Image from 'next/image';
-
-
-const features = [
-    {name: 'React', description: 'JavaScript framework build by facebook'},
-    {name: 'Firebase', description: 'Firebase is a hosting service from google'},
-    {name: 'Tailwind', description: 'Tailwind is a ligtwheight CSS framework that helps us styling your website'},
-    {name: 'Wordpress', description: 'WordPress is the simplest, most popular way to create your own website or blog'},
-]
+import Button from "../button/button";
 
 export default function Index() {
     const [allTechnologies, setAllTechnologies] = useState([]);
@@ -46,7 +39,7 @@ export default function Index() {
     return (
         <div className="rounded-lg mt-5">
             <div
-                className="mx-auto  grid lg:max-w-[88%] max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+                className="mx-auto grid lg:max-w-[88%] max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
 
                 <div className="justify-center">
                     <Image src={services}/>
@@ -69,6 +62,13 @@ export default function Index() {
                             )}
                         </span>
                     </p>
+
+                   <div className="mt-6">
+                       <Button
+                       title="Read more"
+                       link="/services"
+                       />
+                   </div>
 
                     <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                         {allTechnologies.map((technologies) => (
