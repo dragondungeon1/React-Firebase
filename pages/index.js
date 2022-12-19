@@ -6,6 +6,8 @@ import {collection, query, orderBy, onSnapshot} from "firebase/firestore";
 import Hero from "../components/hero";
 import Middle from "../components/home/middle";
 import Faq from "../components/home/faq";
+import developer from '/public/svg/developer.svg'
+
 import Productcard from "../components/product/productcard";
 import Productrow from "../components/home/productrow";
 import ProductSection from "../components/home/productSection";
@@ -34,7 +36,10 @@ export default function Home() {
                 <meta name="description" content="Creatives minds"/>
             </Head>
 
-            <Hero/>
+            <Hero
+            tag="home"
+            img={developer}
+            />
             <Middle/>
             <ProductSection/>
             <Faq/>

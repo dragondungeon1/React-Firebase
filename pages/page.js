@@ -4,6 +4,7 @@ import {db} from "../utils/firebase";
 import {useEffect, useState} from "react";
 import ProductHero from "../components/Hero/productHero";
 import developer from "/public/svg/hosting.svg";
+import ProductMiddle from "../components/middle/ProductMiddle";
 
 export default function Page(){
 

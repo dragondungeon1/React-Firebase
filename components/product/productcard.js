@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "../button/button";
 
 export default function Productcard(props){
     return (
@@ -11,11 +12,10 @@ export default function Productcard(props){
                 <h5 className="mb-2 text-xl font-semibold tracking-tight text-green-500">{props.title}</h5>
             </p>
             <p className="mb-3 font-normal text-gray-500 ">{props.shortDescription}</p>
-            <Link href={`/page?product=${props.link}`} className="inline-flex items-center text-green-600 border">
-                <p className="cursor-pointer">
-                {props.cta}
-                </p>
-            </Link>
+            <Button
+                link={`/page?product=${props.link}`}
+                title={props.cta}
+            />
         </div>
 
     )

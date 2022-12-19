@@ -62,7 +62,7 @@ export default function Product() {
         if (loading) return;
         if (!user) route.push("auth/login");
         if (routeData.id) {
-            setProduct({description: routeData.description, id: routeData.id, title: routeData.title, cta: routeData.cta})
+            setProduct({description: routeData.description, id: routeData.id, title: routeData.title, cta: routeData.cta, price: routeData.price})
         }
     };
 
@@ -72,7 +72,11 @@ export default function Product() {
 
 
     return (
-        <div className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto">
+        // <div className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto">
+
+        // </div>
+
+        <div>
             <Form
                 entity={product}
                 submitFunction={submitProduct}
@@ -81,7 +85,9 @@ export default function Product() {
                 fieldTitle="CTA"
                 addCtaField={true}
                 addLinkField={true}
+                addPriceField={true}
             />
+
         </div>
     )
 }

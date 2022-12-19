@@ -1,6 +1,9 @@
+import Image from "next/image";
+import Hero from "../hero";
 import Title from "../text/title";
 import Message from "../message";
-import Image from "next/image";
+import Button from "../button/button";
+import developer from "../../public/svg/developer.svg";
 
 export default function ProductHero(props) {
     return (
@@ -21,28 +24,22 @@ export default function ProductHero(props) {
                             {props.description}
                         </p>
                         <div className="relative flex flex-col sm:flex-row sm:space-x-4">
-                            <a
-                                href=""
-                                className="py-2 px-2 font-medium text-green-600 border-green-600 border-2 rounded hover:bg-green-600 hover:text-white transition duration-300"
-                            >Learn more</a
-                            >
-                            <a
-                                href="#_"
-                                className="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600"
-                            >
-                                Learn More
-                            </a>
+                            <Button
+                                link="/contact"
+                                title="Contact us"
+                            />
                         </div>
                     </div>
                 </div>
                 <div className="w-full md:w-1/2">
                     <div
-                        className="w-full h-auto overflow-hidden"
+                        className="w-full text-center h-auto overflow-hidden"
                     >
                         <Image src={props.img}/>
                     </div>
                 </div>
             </div>
         </div>
+
     )
 }

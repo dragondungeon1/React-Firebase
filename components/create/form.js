@@ -1,54 +1,95 @@
 import CtaField from "../fields/ctaField";
 import LinkField from "../fields/linkField";
+import PriceField from "../fields/priceField";
+import TagField from "../fields/tagField";
 
-export default function Form({submitFunction, setFunction, entity, fieldTitle, addCtaField, addLinkField}) {
+export default function Form({submitFunction, setFunction, entity, fieldTitle, addCtaField, addLinkField, addPriceField, addTagField}) {
     return (
         <div>
-            <form onSubmit={submitFunction}>
-                <h1 className="text-2xl font-bold">
-                    {entity.hasOwnProperty('id') ? 'Edit record' : 'Create a new record'}
-                </h1>
-                <div className="py-2">
-                    <h3 className="text-lg font-medium py-2">title</h3>
-                    <input value={entity.title}
-                           onChange={(e) => setFunction({...entity, title: e.target.value})}
-                           className="bg-gray-800 h-12 w-full text-white rounded-lg p-2 text-small">
-                    </input>
-                </div>
-                <div className="py-2">
-                    <h3 className="text-lg font-medium py-2">Description</h3>
-                    <textarea value={entity.description}
-                              onChange={(e) => setFunction({...entity, description: e.target.value})}
-                              className="bg-gray-800 h-48 w-full text-white rounded-lg p-2 text-small">
-                    </textarea>
-                    {/*<p className={`text-cyan-600 font-medium text-sm ${entity.description.length > 300 ? 'text-red-600' : ''}`}>{entity.description.length}/300</p>*/}
-                </div>
+            <div>
+                <section className="bg-white ">
+                    <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16 " >
+                        <h1 className="text-2xl font-bold">
+                            {entity.hasOwnProperty('id') ? 'Edit record' : 'Create a new record'}
+                        </h1>
+                        <form onSubmit={submitFunction}>
+                            <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                                <div className="sm:col-span-2">
+                                    <label htmlFor="name"
+                                           className="block mb-2 text-sm font-medium text-gray-900 ">Title
+                                    </label>
+                                    <input value={entity.title}
+                                           onChange={(e) => setFunction({...entity, title: e.target.value})}
+                                           placeholder="Type product name" required=""
+                                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                                        />
 
-                { addCtaField === true ?
-                    <CtaField
-                        field={entity.cta}
-                        fieldTitle={fieldTitle}
-                        setFunction={setFunction}
-                        entity={entity}
-                    /> :
-                    ''
-                }
-                { addLinkField === true ?
-                    <LinkField
-                        linkField={entity.link}
-                        fieldTitle={fieldTitle}
-                        setFunction={setFunction}
-                        entity={entity}
-                    /> :
-                    ''
-                }
 
-                <button
-                    type="submit"
-                    className="w-full bg-cyan-600 text-white font-medium p-2 my-2 rounded-lg text-small">
-                    {entity.hasOwnProperty('id') ? 'Save and submit' : 'Save and submit'}
-                </button>
-            </form>
+
+                                </div>
+                                <div className="w-full">
+                                    { addCtaField === true ?
+                                        <CtaField
+                                            field={entity.cta}
+                                            fieldTitle={fieldTitle}
+                                            setFunction={setFunction}
+                                            entity={entity}
+                                        /> :
+                                        ''
+                                    }
+
+                                </div>
+                                <div className="w-full">
+                                    { addLinkField === true ?
+                                        <LinkField
+                                            linkField={entity.link}
+                                            fieldTitle={fieldTitle}
+                                            setFunction={setFunction}
+                                            entity={entity}
+                                        /> :
+                                        ''
+                                    }
+                                </div>
+                                <div className="w-full">
+                                    { addPriceField === true ?
+                                        <PriceField
+                                            linkField={entity.price}
+                                            fieldTitle={fieldTitle}
+                                            setFunction={setFunction}
+                                            entity={entity}
+                                        /> :
+                                        ''
+                                    }
+                                    { addTagField === true ?
+                                        <TagField
+                                            linkField={entity.price}
+                                            fieldTitle={fieldTitle}
+                                            setFunction={setFunction}
+                                            entity={entity}
+                                        /> :
+                                        ''
+                                    }
+                                </div>
+                                <div className="sm:col-span-2">
+                                    <label htmlFor="description"
+                                           className="block mb-2 text-sm font-medium text-gray-900 ">Description</label>
+                                    <textarea value={entity.description}
+                                              onChange={(e) => setFunction({...entity, description: e.target.value})}
+                                              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500    ">
+                                          </textarea>
+                                </div>
+                            </div>
+                            <button
+                                type="submit"
+                                className="w-full bg-cyan-600 text-white font-medium p-2 my-2 rounded-lg text-small">
+                                {entity.hasOwnProperty('id') ? 'Save and submit' : 'Save and submit'}
+                            </button>
+                        </form>
+                    </div>
+                </section>
+
+            </div>
+
         </div>
     )
 }

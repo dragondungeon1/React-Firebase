@@ -61,7 +61,7 @@ export default function post() {
         if (loading) return;
         if (!user) route.push("auth/login");
         if (routeData.id) {
-            setPost({description: routeData.description, id: routeData.id, title: routeData.title})
+            setPost({description: routeData.description, id: routeData.id, title: routeData.title, tag: routeData.tag})
         }
     };
 
@@ -76,6 +76,7 @@ export default function post() {
             entity={post}
             submitFunction={submitPost}
             setFunction={setPost}
+            addTagField={true}
             />
         </div>
     )
