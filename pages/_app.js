@@ -3,7 +3,6 @@ import Layout from "../components/layout";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import React, {useEffect, useState} from "react";
-import Map from "../components/map/map";
 import Footer from "../components/footer/footer";
 
 function MyApp({Component, pageProps}) {
@@ -17,7 +16,6 @@ function MyApp({Component, pageProps}) {
             <Layout>
                 <ToastContainer limit={1}/>
                 <Component {...pageProps} />
-                {/*<Map/>*/}
                 <Footer/>
             </Layout>
 

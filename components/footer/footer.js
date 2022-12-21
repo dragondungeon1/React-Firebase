@@ -1,5 +1,3 @@
-import Map from "../map/map";
-
 export default function Footer() {
     return (
         <footer

@@ -5,9 +5,7 @@ import {useEffect, useState} from "react";
 import {collection} from 'firebase/firestore'
 import {addDoc} from 'firebase/firestore'
 import {serverTimestamp, doc, updateDoc} from 'firebase/firestore'
-import {toast} from 'react-toastify'
 import Form from "../../components/create/form";
-import LinkField from "../../components/fields/linkField";
 
 
 export default function Product() {
@@ -21,18 +19,6 @@ export default function Product() {
     //submit product
     const submitProduct = async (e) => {
         e.preventDefault();
-
-        //run checks a
-        // if (product.description.length > 300) {
-        //     toast.error('description is too long!')
-        //     return;
-        // }
-        // if (!product.description) {
-        //     toast.error('description is empty')
-        //     return;
-        // } else {
-        //     toast.success('product successfull')
-        // }
 
         if (product?.hasOwnProperty('id')) {
             const docRef = doc(db, 'products', product.id);
@@ -72,10 +58,6 @@ export default function Product() {
 
 
     return (
-        // <div className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto">
-
-        // </div>
-
         <div>
             <Form
                 entity={product}

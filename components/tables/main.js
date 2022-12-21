@@ -18,7 +18,7 @@ export default function Main({entities, removeFunction, href}) {
                             description
                         </th>
                         <th scope="col" className="py-3 px-6">
-                            User
+                            Tag
                         </th>
                         <th scope="col" className="py-3 px-6">
                             Actions
@@ -44,7 +44,7 @@ export default function Main({entities, removeFunction, href}) {
                                 {entity.description}
                             </td>
                             <td className="py-4 px-6">
-                                {entity.email}
+                                #{entity.tag}
                             </td>
                             <td className="py-4 px-6">
                                 <div className="flex gap-4">

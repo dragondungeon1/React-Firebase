@@ -1,7 +1,4 @@
-import Title from "../text/title";
-import Message from "../message";
 import Image from "next/image";
-import contentCreator from "../../public/svg/content-creator.svg";
 
 export default function Hero(props) {
     return (
@@ -16,18 +13,10 @@ export default function Hero(props) {
                                 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl"
                             >
                                 {props.title}
-                            {/*<span className="block xl:inline text-blue-500"> {allPosts.slice(1,2).map(post =>*/}
-                            {/*    <Title key={post.id} {...post}>*/}
-
-                            {/*    </Title>)}</span>*/}
                             </h1>
                             <p
                                 className="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl"
                             >
-                            {/*<span className="block xl:inline"> {allPosts.slice(1,2).map(post =>*/}
-                            {/*    <Message key={post.id} {...post}>*/}
-
-                            {/*    </Message>)}</span>*/}
                                 {props.description}
                             </p>
                         </div>

@@ -1,9 +1,5 @@
 import Image from "next/image";
-import Hero from "../hero";
-import Title from "../text/title";
-import Message from "../message";
 import Button from "../button/button";
-import developer from "../../public/svg/developer.svg";
 
 export default function ProductHero(props) {
     return (

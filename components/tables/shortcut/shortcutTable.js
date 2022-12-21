@@ -2,7 +2,6 @@ import {auth} from '../../../utils/firebase'
 import {useAuthState} from "react-firebase-hooks/auth";
 import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
-import Link from 'next/link'
 import {collection, onSnapshot, query, where, doc, deleteDoc} from "firebase/firestore";
 import {db} from "../../../utils/firebase";
 import {toast} from "react-toastify";

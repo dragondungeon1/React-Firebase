@@ -1,14 +1,13 @@
 import {useEffect, useState} from "react";
-import {collection, onSnapshot, orderBy, query} from "firebase/firestore";
+import {collection, onSnapshot, orderBy, query, where} from "firebase/firestore";
 import {db} from "../../utils/firebase";
 import Message from "../message";
 import Title from "../text/title";
-import react from '/public/svg/react.svg'
 import services from '/public/svg/service.svg'
 import Image from 'next/image';
 import Button from "../button/button";
 
-export default function Index() {
+export default function Index(props) {
     const [allTechnologies, setAllTechnologies] = useState([]);
     const [allPosts, setAllPosts] = useState([]);
 
@@ -23,11 +22,9 @@ export default function Index() {
 
     const getPosts = async () => {
         const collectionRef = collection(db, 'posts')
-        const q = query(collectionRef, orderBy('timestamp', 'desc'))
+        const q = query(collectionRef, where("tag", "==", 'home-middle'))
         const unsubscribe = onSnapshot(q, (snapshot) => {
             setAllPosts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
-            console.log(allPosts)
-
             return unsubscribe;
         });
     };
@@ -48,7 +45,7 @@ export default function Index() {
                 <div>
                     <h2 className="text-3xl  font-bold tracking-tight text-gray-900 sm:text-4xl"><span
                         className="block xl:inline">
-                        {allPosts.slice(0, 1).map(post =>
+                        {allPosts.map(post =>
                             <Title key={post.id} {...post}>
                                 {post.title}
                             </Title>
@@ -56,7 +53,7 @@ export default function Index() {
                         </span></h2>
                     <p className="mt-4 text-gray-500">
                         <span className="block xl:inline">
-                            {allPosts.slice(0,1).map(post =>
+                            {allPosts.map(post =>
                                 <Message key={post.id} {...post}>
                                 </Message>
                             )}
@@ -66,15 +63,13 @@ export default function Index() {
                    <div className="mt-6">
                        <Button
                        title="Read more"
-                       link="/services"
+                       link="/about"
                        />
                    </div>
 
                     <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                         {allTechnologies.map((technologies) => (
-
                             <div key={technologies.id} className="border-t border-gray-200 pt-4">
-                                <Image src={react}/>
                                 <dt className="font-medium">{technologies.title}</dt>
                                 <dd className="mt-2 text-sm text-gray-500">{technologies.description}</dd>
                             </div>

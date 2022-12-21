@@ -41,8 +41,8 @@ export default function Hero(props) {
                         </p>
                         <div className="relative flex flex-col sm:flex-row sm:space-x-4">
                             <Button
-                                link="/about"
-                                title="Read more"
+                                link="/contact"
+                                title="Contact us"
                             />
                         </div>
                     </div>

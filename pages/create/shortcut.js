@@ -26,8 +26,8 @@ export default function Shortcut() {
             toast.error('route is too long!')
             return;
         }
-        if (!shortcut.route) {
-            toast.error('route is empty')
+        if (!shortcut.link) {
+            toast.error('link is empty')
             return;
         } else {
             toast.success('post successfull')
@@ -51,7 +51,7 @@ export default function Shortcut() {
                 avatar: user.photoURL,
                 username: user.displayName
             });
-            setShortcut({route: ""});
+            setShortcut({link: ""});
             return route.push('/dashboard')
         }
     };
@@ -61,7 +61,7 @@ export default function Shortcut() {
         if (loading) return;
         if (!user) route.push("auth/login");
         if (routeData.id) {
-            setShortcut({route: routeData.route, id: routeData.id, title: routeData.title})
+            setShortcut({link: routeData.link, id: routeData.id, title: routeData.title})
         }
     };
 
@@ -76,6 +76,7 @@ export default function Shortcut() {
                 entity={shortcut}
                 submitFunction={submitShortcut}
                 setFunction={setShortcut}
+                addLinkField={true}
             />
         </div>
     )

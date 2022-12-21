@@ -38,10 +38,11 @@ export default function FaqTable() {
     }, [user, loading])
     return (
         <div>
+
             <Main
                 entities={faqs}
                 removeFunction={deleteproduct}
-                href='/product'
+                href='/faq'
             />
         </div>
     );
