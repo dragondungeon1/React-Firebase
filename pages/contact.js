@@ -1,5 +1,22 @@
+import emailjs from '@emailjs/browser';
+import {useRef} from 'react';
+
+
 export default function Contact() {
-    return (
+        const form = useRef();
+
+        const sendEmail = (e) => {
+            e.preventDefault();
+
+            emailjs.sendForm('contact_service', 'template_j641qge', form.current, 'user_xzAl4tedcukr4FdEcS2Wb')
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error.text);
+                });
+        };
+
+        return (
         <div className="mx-auto m-8 tex ">
             <section className="bg-gray-100">
                 <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
@@ -23,7 +40,7 @@ export default function Contact() {
                         </div>
 
                         <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-                            <form action="" className="space-y-4">
+                            <form ref={form} onSubmit={sendEmail} action="" className="space-y-4">
                                 <div>
                                     <label className="sr-only" for="name">Name</label>
                                     <input
@@ -31,6 +48,7 @@ export default function Contact() {
                                         placeholder="Name"
                                         type="text"
                                         id="name"
+                                        name="client_name"
                                     />
                                 </div>
 
@@ -42,6 +60,7 @@ export default function Contact() {
                                             placeholder="Email address"
                                             type="email"
                                             id="email"
+                                            name="client_email"
                                         />
                                     </div>
 
@@ -52,6 +71,7 @@ export default function Contact() {
                                             placeholder="Phone Number"
                                             type="tel"
                                             id="phone"
+                                            name="client_phone"
                                         />
                                     </div>
                                 </div>
@@ -98,6 +118,7 @@ export default function Contact() {
                                         placeholder="Message"
                                         rows="8"
                                         id="message"
+                                        name="client_message"
                                     ></textarea>
                                 </div>
 
@@ -129,6 +150,16 @@ export default function Contact() {
                     </div>
                 </div>
             </section>
+
+            {/*<form >*/}
+            {/*    <label>Name</label>*/}
+            {/*    <input type="text" name="user_name" />*/}
+            {/*    <label>Email</label>*/}
+            {/*    <input type="email" name="user_email" />*/}
+            {/*    <label>Message</label>*/}
+            {/*    <textarea name="message" />*/}
+            {/*    <button type="submit" value="Send" />*/}
+            {/*</form>*/}
 
         </div>
     )
