@@ -5,8 +5,10 @@ import Message from "./message";
 import Image from 'next/image';
 import Title from "./text/title";
 import Button from "./button/button";
+import ButtonMui from '@mui/material/Button';
+
 export default function Hero(props) {
-    const [allPosts, setAllPosts] = useState([]);
+    const [allPosts, setAllPosts, loading] = useState([]);
 
     const getPosts = async () => {
         const collectionRef = collection(db, 'posts')

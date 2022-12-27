@@ -35,7 +35,6 @@ export default function Product() {
                 ...product,
                 timestamp: serverTimestamp(),
                 user: user.uid,
-                avatar: user.photoURL,
                 username: user.displayName
             });
             setProduct({description: ""});
@@ -48,7 +47,7 @@ export default function Product() {
         if (loading) return;
         if (!user) route.push("auth/login");
         if (routeData.id) {
-            setProduct({description: routeData.description, id: routeData.id, title: routeData.title, cta: routeData.cta, price: routeData.price})
+            setProduct({description: routeData.description, id: routeData.id, title: routeData.title, cta: routeData.cta, price: routeData.price, link: routeData.link })
         }
     };
 

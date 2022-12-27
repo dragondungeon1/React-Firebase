@@ -44,7 +44,7 @@ export default function Form({submitFunction, setFunction, entity, fieldTitle, a
                                 <div className="w-full">
                                     { addLinkField === true ?
                                         <LinkField
-                                            linkField={entity.link}
+                                            field={entity.link}
                                             fieldTitle={fieldTitle}
                                             setFunction={setFunction}
                                             entity={entity}
@@ -55,7 +55,7 @@ export default function Form({submitFunction, setFunction, entity, fieldTitle, a
                                 <div className="w-full">
                                     { addPriceField === true ?
                                         <PriceField
-                                            linkField={entity.price}
+                                            field={entity.price}
                                             fieldTitle={fieldTitle}
                                             setFunction={setFunction}
                                             entity={entity}
@@ -64,7 +64,7 @@ export default function Form({submitFunction, setFunction, entity, fieldTitle, a
                                     }
                                     { addTagField === true ?
                                         <TagField
-                                            linkField={entity.price}
+                                            linkField={entity.tag}
                                             fieldTitle={fieldTitle}
                                             setFunction={setFunction}
                                             entity={entity}

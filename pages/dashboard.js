@@ -81,7 +81,7 @@ export default function Dashboard() {
                                             <path strokeLinecap="round" strokeLinejoin="round"
                                                   d="M12 4.5v15m7.5-7.5h-15"/>
                                         </svg>
-                                        <span className="mx-4 font-medium">Technologies</span>
+                                        <span className="mx-4 font-medium">Tech</span>
                                     </a>
                                 </li>
                                 <li>
