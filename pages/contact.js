@@ -14,6 +14,8 @@ export default function Contact() {
                 }, (error) => {
                     console.log(error.text);
                 });
+            form.current.reset();
+
         };
 
         return (
@@ -73,41 +75,6 @@ export default function Contact() {
                                             id="phone"
                                             name="client_phone"
                                         />
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
-                                    <div>
-                                        <input className="sr-only" id="option1" type="radio" tabindex="-1" />
-                                        <label
-                                            for="option1"
-                                            className="block w-full rounded-lg border border-gray-200 p-3"
-                                            tabindex="0"
-                                        >
-                                            <span className="text-sm font-medium"> Option 1 </span>
-                                        </label>
-                                    </div>
-
-                                    <div>
-                                        <input className="sr-only" id="option2" type="radio" tabindex="-1" />
-                                        <label
-                                            for="option2"
-                                            className="block w-full rounded-lg border border-gray-200 p-3"
-                                            tabindex="0"
-                                        >
-                                            <span className="text-sm font-medium"> Option 2 </span>
-                                        </label>
-                                    </div>
-
-                                    <div>
-                                        <input className="sr-only" id="option3" type="radio" tabindex="-1" />
-                                        <label
-                                            for="option3"
-                                            className="block w-full rounded-lg border border-gray-200 p-3"
-                                            tabindex="0"
-                                        >
-                                            <span className="text-sm font-medium"> Option 3 </span>
-                                        </label>
                                     </div>
                                 </div>
 

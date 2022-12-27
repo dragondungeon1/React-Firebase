@@ -26,6 +26,14 @@ export default function Page() {
             return unsubscribe;
         });
     };
+
+    const getIndividualShortProdFromProduct = (product) => {
+        return product.map(prod => {
+            return prod.shortDescription
+        })
+    }
+
+    console.log(product)
     useEffect(() => {
         getProduct();
     }, []);
@@ -38,7 +46,7 @@ export default function Page() {
                         <ProductHero
                             title={product.title}
                             description={product.description}
-                            img={developer}
+                            img={developer} 
                         />
                     </div>
                 )}

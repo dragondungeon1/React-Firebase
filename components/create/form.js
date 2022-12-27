@@ -2,6 +2,8 @@ import CtaField from "../fields/ctaField";
 import LinkField from "../fields/linkField";
 import PriceField from "../fields/priceField";
 import TagField from "../fields/tagField";
+import SuccessButton from "../button/crud/successButton";
+import DeleteButton from "../button/crud/deleteButton";
 
 export default function Form({submitFunction, setFunction, entity, fieldTitle, addCtaField, addLinkField, addPriceField, addTagField}) {
     return (
@@ -79,11 +81,14 @@ export default function Form({submitFunction, setFunction, entity, fieldTitle, a
                                           </textarea>
                                 </div>
                             </div>
-                            <button
-                                type="submit"
-                                className="w-full bg-cyan-600 text-white font-medium p-2 my-2 rounded-lg text-small">
-                                {entity.hasOwnProperty('id') ? 'Save and submit' : 'Save and submit'}
-                            </button>
+
+                            <div className="flex items-center space-x-4">
+                                <SuccessButton
+                                    link="/"
+                                    title="Submit"
+                                />
+                                {entity.hasOwnProperty('id') ? <DeleteButton/> : ''}
+                            </div>
                         </form>
                     </div>
                 </section>

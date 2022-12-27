@@ -11,7 +11,7 @@ export default function Nav() {
         <nav className="flex shadow-md rounded-lg p-5 justify-between items-center py-4">
             <Link href="/">
                 <button className="text-lg font-medium">
-                    creative minds
+                    DeveloKey
                 </button>
             </Link>
             <Link href="/about">
@@ -36,7 +36,6 @@ export default function Nav() {
                     </div>
 
                 )
-
                 }
             </ul>
         </nav>
