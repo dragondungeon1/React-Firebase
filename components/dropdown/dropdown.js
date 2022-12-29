@@ -2,6 +2,7 @@ import {Fragment} from 'react'
 import {Menu, Transition} from '@headlessui/react'
 import {ChevronDownIcon} from '@heroicons/react/20/solid'
 import Signout from "../signout";
+import Link from "next/link";
 
 
 function classNames(...classes) {
@@ -33,7 +34,7 @@ export default function Dropdown() {
                     <div className="py-1">
                         <Menu.Item>
                             {({active}) => (
-                                <a
+                                <Link
                                     href="/dashboard"
                                     className={classNames(
                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -41,7 +42,7 @@ export default function Dropdown() {
                                     )}
                                 >
                                     Dashboard
-                                </a>
+                                </Link>
                             )}
                         </Menu.Item>
 

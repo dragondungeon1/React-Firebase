@@ -61,7 +61,7 @@ export default function Middle() {
                 >
                     <h4 className="text-xl font-medium text-gray-700">JavaScript</h4>
                     <p className="text-base text-center text-black">
-                        JavaScript, who doesn't use JavaScript these days? My favorite
+                        JavaScript, who doesn&apos;t use JavaScript these days? My favorite
                         framework to work with is NuxtJs because it is fast and developer
                         friendly.
                     </p>

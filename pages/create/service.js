@@ -8,7 +8,6 @@ import {serverTimestamp, doc, updateDoc} from 'firebase/firestore'
 import {toast} from 'react-toastify'
 import Form from "../../components/create/form";
 
-
 export default function service() {
     //form state
     const [service, setService] = useState({description: "", title: ""});
@@ -71,12 +70,16 @@ export default function service() {
 
 
     return (
-        <div className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto">
+        <div>
+            {user ? (
+                <div className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto">
             <Form
                 entity={service}
                 submitFunction={submitService}
                 setFunction={setService}
             />
+                </div>
+                ):('')}
         </div>
     )
 }

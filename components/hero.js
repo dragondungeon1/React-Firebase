@@ -10,17 +10,18 @@ import ButtonMui from '@mui/material/Button';
 export default function Hero(props) {
     const [allPosts, setAllPosts, loading] = useState([]);
 
-    const getPosts = async () => {
-        const collectionRef = collection(db, 'posts')
-        const q = query(collectionRef, where("tag", "==", props.tag))
-        const unsubscribe = onSnapshot(q, (snapshot) => {
-            setAllPosts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
-            return unsubscribe;
-        });
-    };
+
     useEffect(() => {
+        const getPosts = async () => {
+            const collectionRef = collection(db, 'posts')
+            const q = query(collectionRef, where("tag", "==", props.tag))
+            const unsubscribe = onSnapshot(q, (snapshot) => {
+                setAllPosts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
+                return unsubscribe;
+            });
+        };
         getPosts();
-    }, []);
+    }, [props.tag, setAllPosts, loading]);
 
     return(
         <div className="container items-center lg:max-w-[85%] max-w-6xl px-8 mx-auto xl:px-5 mt-10">
@@ -53,7 +54,7 @@ export default function Hero(props) {
                     <div
                         className="w-full h-auto overflow-hidden"
                     >
-                        <Image src={props.img}/>
+                        <Image alt="Welcome image" src={props.img}/>
                     </div>
                 </div>
             </div>

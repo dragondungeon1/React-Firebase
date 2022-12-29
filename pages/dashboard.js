@@ -1,4 +1,5 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import {useAuthState} from "react-firebase-hooks/auth";
 import ServiceTable from "../components/tables/service/serviceTable";
 import TextblockTable from "../components/tables/texblock/textblockTable";
 import ShortcutTable from "../components/tables/shortcut/shortcutTable";
@@ -6,12 +7,25 @@ import Shortcut from "../components/dashboard/shortcut";
 import TechnologieTable from "../components/tables/technologies/technologieTable";
 import ProductTable from "../components/tables/product/table";
 import FaqTable from "../components/tables/faq/faqTable";
+import {auth} from "../utils/firebase";
+import {useRouter} from "next/router";
 
 export default function Dashboard() {
+    const route = useRouter();
     const [openTab, setOpenTab] = useState(1);
+    const [user, loading] = useAuthState(auth);
 
+    const checkUser = async () => {
+        if (loading) return;
+        if (!user) route.push("auth/login");
+    }
+
+    useEffect(() => {
+        checkUser();
+    }, [user, loading])
     return (
         <div>
+            {user ? (
             <div className="flex">
                 <div className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r">
                     <h2 className="text-3xl font-semibold text-center text-blue-800">Logo</h2>
@@ -145,6 +159,7 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
+                ) : ( '' )}
         </div>
     )
 }

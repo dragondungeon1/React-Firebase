@@ -29,7 +29,6 @@ export default function Form({submitFunction, setFunction, entity, fieldTitle, a
 
 
                                 </div>
-                                <div className="w-full">
                                     { addCtaField === true ?
                                         <CtaField
                                             field={entity.cta}
@@ -40,8 +39,6 @@ export default function Form({submitFunction, setFunction, entity, fieldTitle, a
                                         ''
                                     }
 
-                                </div>
-                                <div className="w-full">
                                     { addLinkField === true ?
                                         <LinkField
                                             field={entity.link}
@@ -51,7 +48,6 @@ export default function Form({submitFunction, setFunction, entity, fieldTitle, a
                                         /> :
                                         ''
                                     }
-                                </div>
                                 <div className="w-full">
                                     { addPriceField === true ?
                                         <PriceField

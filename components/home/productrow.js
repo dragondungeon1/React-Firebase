@@ -22,7 +22,7 @@ export default function Productrow() {
         <div className=" rounded-lg px-6 py-8 mt-10">
             <div className="flex flex-wrap justify-evenly gap-4">
                 {allProducts.map((product) =>
-                    <div className="item">
+                    <div key={product.id} className="item">
                         <Productcard
                             title={product.title}
                             shortDescription={product.description}

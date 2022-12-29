@@ -25,7 +25,7 @@ export default function Hero(props) {
                         <div
                             className="w-full h-auto overflow-hidden"
                         >
-                            <Image src={props.img}/>
+                            <Image alt={props.title} src={props.img}/>
                         </div>
                     </div>
                 </div>

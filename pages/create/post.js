@@ -7,6 +7,7 @@ import {addDoc} from 'firebase/firestore'
 import {serverTimestamp, doc, updateDoc} from 'firebase/firestore'
 import {toast} from 'react-toastify'
 import Form from "../../components/create/form";
+import TagField from "../../components/fields/tagField";
 
 
 export default function post() {
@@ -59,7 +60,7 @@ export default function post() {
     // check our user
     const checkUser = async () => {
         if (loading) return;
-        if (!user) route.push("auth/login");
+        if (!user) route.push("/");
         if (routeData.id) {
             setPost({description: routeData.description, id: routeData.id, title: routeData.title, tag: routeData.tag})
         }
@@ -71,13 +72,20 @@ export default function post() {
 
 
     return (
+
         <div className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto">
-            <Form
-            entity={post}
-            submitFunction={submitPost}
-            setFunction={setPost}
-            addTagField={true}
-            />
+            {user ? (
+                <Form
+                entity={post}
+                submitFunction={submitPost}
+                setFunction={setPost}
+                addTagField={true}
+                />
+                ) :
+                (
+                    <div>Loading</div>
+                )
+            }
         </div>
     )
 }

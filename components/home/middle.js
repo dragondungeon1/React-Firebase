@@ -39,7 +39,7 @@ export default function Index(props) {
                 className="mx-auto grid lg:max-w-[88%] max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
 
                 <div className="justify-center">
-                    <Image src={services}/>
+                    <Image alt="person showing quality" src={services}/>
                 </div>
 
                 <div>

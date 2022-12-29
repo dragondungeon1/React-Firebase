@@ -6,6 +6,7 @@ import {toast} from 'react-toastify'
 import {useEffect} from "react";
 import {useRouter} from "next/router";
 import {useAuthState} from "react-firebase-hooks/auth";
+import Image from "next/image";
 
 export default function Register() {
     const [registerEmaill, setRegisterEmail] = useState("")
@@ -28,16 +29,16 @@ export default function Register() {
         if (user){
             route.push('/account')
         }else {
-            // console.log('no login')
+            return 'not logged in'
         }
-    },[user])
+    },[user, route])
 
     return (
         <div>
             <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                 <div className="w-full max-w-md space-y-8  shadow-md p-10">
                     <div>
-                        <img
+                        <Image
                             className="mx-auto h-12 w-auto"
                             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                             alt="Your Company"

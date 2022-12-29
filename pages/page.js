@@ -18,6 +18,13 @@ export default function Page() {
     }
 
     const [product, setProduct] = useState([])
+
+
+    const getIndividualShortProdFromProduct = (product) => {
+        return product.map(prod => {
+            return prod.shortDescription
+        })
+    }
     const getProduct = async () => {
         const collectionRef = collection(db, 'products',)
         const q = query(collectionRef, where('link', '==', getUrlString()))
@@ -26,14 +33,6 @@ export default function Page() {
             return unsubscribe;
         });
     };
-
-    const getIndividualShortProdFromProduct = (product) => {
-        return product.map(prod => {
-            return prod.shortDescription
-        })
-    }
-
-    console.log(product)
     useEffect(() => {
         getProduct();
     }, []);
@@ -42,7 +41,7 @@ export default function Page() {
         <section>
             <div>
                 {product.map((product) =>
-                    <div className="item">
+                    <div key={product.id} className="item">
                         <ProductHero
                             title={product.title}
                             description={product.description}
@@ -64,7 +63,7 @@ export default function Page() {
                                 href="/accountant"
                             >
           <span className="inline-block rounded-lg bg-gray-50 p-3">
-            <Image src={brush}/>
+            <Image alt="brush icon" src={brush}/>
           </span>
 
                                 <h2 className="mt-2 font-bold">Lorem ipsum</h2>

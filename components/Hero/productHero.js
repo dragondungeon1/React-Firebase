@@ -31,7 +31,7 @@ export default function ProductHero(props) {
                     <div
                         className="w-full text-center h-auto overflow-hidden"
                     >
-                        <Image src={props.img}/>
+                        <Image alt={props.title} src={props.img}/>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,6 @@ import {useEffect, useState} from "react";
 export default function ProductSection() {
     const [allProducts, setAllProducts] = useState([]);
 
-
     const getProducts = async () => {
         const collectionRef = collection(db, 'products')
         const q = query(collectionRef, orderBy('timestamp', 'asc'))
@@ -32,7 +31,7 @@ export default function ProductSection() {
                     </h1>
                     <div className="grid  grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
                         {allProducts.map((product) =>
-                            <div className="item">
+                            <div key={product.id} className="item">
                                 <Productcard
                                     title={product.title}
                                     shortDescription={product.description}
@@ -45,7 +44,7 @@ export default function ProductSection() {
                 </div>
 
                 <div className="justify-center">
-                    <Image src={offer}/>
+                    <Image alt="showing our services" src={offer}/>
                 </div>
 
             </div>

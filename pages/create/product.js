@@ -58,6 +58,7 @@ export default function Product() {
 
     return (
         <div>
+            {user ? (
             <Form
                 entity={product}
                 submitFunction={submitProduct}
@@ -67,7 +68,7 @@ export default function Product() {
                 addCtaField={true}
                 addLinkField={true}
                 addPriceField={true}
-            />
+            /> ) : ('')}
 
         </div>
     )

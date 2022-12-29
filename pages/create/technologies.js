@@ -71,12 +71,16 @@ export default function Technologies() {
 
 
     return (
-        <div className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto">
-            <Form
-                entity={technologies}
-                submitFunction={submitTechnologies}
-                setFunction={setTechnologies}
-            />
+        <div>
+            {user ? (
+            <div className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto">
+                <Form
+                    entity={technologies}
+                    submitFunction={submitTechnologies}
+                    setFunction={setTechnologies}
+                />
+            </div>
+            ) : ('')}
         </div>
     )
 }

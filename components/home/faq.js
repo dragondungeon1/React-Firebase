@@ -51,19 +51,19 @@ const FaqsCard = (props) => {
 
 export default function Faq() {
 
-    const [allFaqs, setAllProducts] = useState([]);
-
-    const getProducts = async () => {
+    const [allFaqs, setAllFaqs] = useState([]);
+    const getAllFaqs = async () => {
         const collectionRef = collection(db, 'faqs')
         const q = query(collectionRef, orderBy('timestamp', 'asc'))
         const unsubscribe = onSnapshot(q, (snapshot) => {
-            setAllProducts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
+            setAllFaqs(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
             return unsubscribe;
         });
         console.log(allFaqs)
     };
+
     useEffect(() => {
-        getProducts();
+        getAllFaqs();
     }, []);
 
     return (
@@ -80,6 +80,7 @@ export default function Faq() {
                 {
                     allFaqs.map((item, idx) => (
                         <FaqsCard
+                            key={idx}
                             idx={idx}
                             faqsList={item}
                             q={item.title}
